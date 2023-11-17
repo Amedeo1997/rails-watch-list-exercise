@@ -1,8 +1,13 @@
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-black">
+    <h1>Save any kind of movies</h1>
+  </div>
+</div>
 <h1>All Lists</h1>
 
 <% @lists.each do |list| %>
   <div>
-    <%= link_to list.name, list_path(list) %>
+  <%= link_to list.name, list_path(list) %>
 
     <%= form_with(url: list_path(list), method: :delete, data: { confirm: "Are you sure?" }) do |form| %>
       <%= form.submit "Remove" %>
