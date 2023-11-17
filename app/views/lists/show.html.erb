@@ -1,11 +1,3 @@
 <h1><%= @list.name %></h1>
-
-<!-- Display list details -->
-<!-- Display associated bookmarks if needed -->
-<%# Example: %>
 <% @list.bookmarks.each do |bookmark| %>
   <p><%= bookmark.comment %></p>
-  <!-- Display other bookmark details -->
-<% end %>
-
-<%= render "bookmarks/form", list: @list, bookmark: @bookmark %>
