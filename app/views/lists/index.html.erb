@@ -1,9 +1,16 @@
-<div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-black">
-    <h1>Save any kind of movies</h1>
+<div class="banner">
+  <div class="container">
+    <h1>This page</h1>
+    <p>
+      <span id="banner-typed-text"></span>
+      <%= link_to 'Create a new list', new_list_path(@list) %>
+    </p>
   </div>
 </div>
-<h1>All Lists</h1>
+
+<div class="container-list">
+  <div class="list-text">
+    <h3>My Lists</h3>
 
 <% @lists.each do |list| %>
   <div>
@@ -16,5 +23,3 @@
     <!-- Add any other list details you want to display -->
   </div>
 <% end %>
-
-<%= link_to "Create New List", new_list_path %>

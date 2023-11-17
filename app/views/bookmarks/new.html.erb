@@ -1,31 +1,16 @@
-<h1>New Bookmark</h1>
 
-<%= form_with(model: [@list, @bookmark], url: list_bookmarks_path(@list)) do |form| %>
-  <% if @bookmark.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h2>
-
-      <ul>
-        <% @bookmark.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
+<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1578674473215-9e07ee2e577d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTQ4fHxtb3ZpZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)">
+  <div class="container">
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :movie_id %>
-    <%= form.text_field :movie_id %>
+<div class="new-lists">
+  <div class="new-list">
+    <h1>Create a new <strong>bookmark</strong> !</h1>
+    <%= simple_form_for [ @list, @bookmark ] do |f| %>
+      <%= f.input :comment %>
+      <%= f.association :movie %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Back', list_path(@list) %>
+</div>
