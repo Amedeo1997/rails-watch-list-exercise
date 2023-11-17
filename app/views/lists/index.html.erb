@@ -3,6 +3,11 @@
 <% @lists.each do |list| %>
   <div>
     <%= link_to list.name, list_path(list) %>
+
+    <%= form_with(url: list_path(list), method: :delete, data: { confirm: "Are you sure?" }) do |form| %>
+      <%= form.submit "Remove" %>
+    <% end %>
+
     <!-- Add any other list details you want to display -->
   </div>
 <% end %>
