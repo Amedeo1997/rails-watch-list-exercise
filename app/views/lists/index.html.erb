@@ -1,11 +1,10 @@
 <h1>All Lists</h1>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li>
-      <%= link_to list.name, list_path(list) %>
-    </li>
-  <% end %>
-</ul>
+<% @lists.each do |list| %>
+  <div>
+    <%= link_to list.name, list_path(list) %>
+    <!-- Add any other list details you want to display -->
+  </div>
+<% end %>
 
-<%= link_to 'New List', new_list_path %>
+<%= link_to "Create New List", new_list_path %>
